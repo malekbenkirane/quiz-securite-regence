@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résultats du Quiz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Régence Cybersécurité</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="result-box">
+            <h2>Résultats du Quiz</h2>
+            <p class="score">Votre score : <span>{{ score }} / {{ total }}</span></p>
+            
+            <!-- Message conditionnel selon le score -->
+            {% if score >= 6 %}
+                <p class="congratulations">Félicitations ! Vous avez réussi le quiz avec un score de {{ score }} / {{ total }}.</p>
+            {% else %}
+                <p class="encouragement">Ce n'est pas grave, veuillez prendre le temps de lire et comprendre la politique de sécurité informatique. Nous sommes constamment confrontés à des enjeux de cybersécurité. Il est important d’être bien informé pour rester vigilant.(demander au departement IT pour le pdf) et retenter le quiz plus tard.</p>
+            {% endif %}
+            
+            <a href="https://www.regence.ca/en/" class="btn">Terminer le quiz</a>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Régence Cybersécurité</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Quiz Cybersécurité</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <!-- Remplacer le texte par l'image du logo -->
+        <div class="logo">
+            <img src="https://www.regence.ca/templates/regence/images/logo.png" alt="Logo Régence" class="logo-img">
+        </div>
+    </header>
+    
+    <main>
+        <div class="login-container">
+            <h2>Quiz Sécurité Informatique Régence</h2>
+            <form method="POST" action="/login">
+                <label for="email">Votre email</label>
+                <input type="email" id="email" name="email" placeholder="Entrez votre email" required>
+                <button type="submit">Commencer</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Département IT Régence. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>

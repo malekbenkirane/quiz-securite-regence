@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Question {{ question_index + 1 }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="quiz-container">
+        <div class="question-card">
+            <h1>Question {{ question_index + 1 }} / {{ total_questions }}</h1>
+            <p>{{ question['question'] }}</p>
+
+            <form method="POST">
+                {% for choice in question['choices'] %}
+                    <div class="choice">
+                        <input type="radio" id="choice{{ loop.index }}" name="q{{ question_index }}" value="{{ loop.index - 1 }}">
+                        <label for="choice{{ loop.index }}">{{ choice }}</label>
+                    </div>
+                {% endfor %}
+
+                <button type="submit" class="submit-btn">Répondre</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

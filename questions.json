@@ -1,0 +1,52 @@
+[
+  {
+    "question": "Pourquoi devez-vous verrouiller votre ordinateur ?",
+    "choices": ["Pour que personne n’utilise mon clavier", "Pour économiser de l’énergie", "Pour protéger l’accès à mes fichiers et emails", "Parce que l’ordinateur est lent"],
+    "answer": 2
+  },
+  {
+    "question": "Vous recevez un email étrange... Que faites-vous ?",
+    "choices": ["Je clique rapidement", "Je transfère l’email au service informatique", "Je réponds à l’email", "Je supprime sans prévenir"],
+    "answer": 1
+  },
+  {
+    "question": "Quel est un signe courant d’un email de phishing ?",
+    "choices": ["Il commence par Bonjour", "Il vient d’un collègue", "Il contient un lien bizarre et des fautes", "Il est en français"],
+    "answer": 2
+  },
+  {
+    "question": "Comment verrouiller rapidement votre ordinateur ?",
+    "choices": ["Fermer l’écran", "Ctrl + Alt + Suppr", "Windows + L ou Cmd + Ctrl + Q", "Débrancher le câble réseau"],
+    "answer": 2
+  },
+  {
+    "question": "Que faire si vous avez cliqué sur un lien suspect ?",
+    "choices": ["Rien", "Éteindre l’écran", "Informer l’IT immédiatement", "Envoyer à un collègue"],
+    "answer": 2
+  },
+  {
+    "question": "Vous partez en pause, que faire ?",
+    "choices": ["Laisser un mot", "Quitter les fenêtres", "Le verrouiller", "Rien"],
+    "answer": 2
+  },
+  {
+    "question": "Quel est un bon mot de passe ?",
+    "choices": ["123456", "MonNom2024", "Mot long avec lettres, chiffres et symboles", "Nom de mon chien"],
+    "answer": 2
+  },
+  {
+    "question": "À qui signaler un email suspect ?",
+    "choices": ["Responsable", "Ami de confiance", "Équipe informatique", "Expéditeur"],
+    "answer": 2
+  },
+  {
+    "question": "Une fenêtre dit : 'Votre PC est infecté'... Que faire ?",
+    "choices": ["Cliquer vite", "Fermer la fenêtre et prévenir IT", "Ignorer", "Redémarrer"],
+    "answer": 1
+  },
+  {
+    "question": "Pourquoi faire attention aux clés USB ?",
+    "choices": ["Elles peuvent contenir des virus", "Elles sont chères", "Elles sont pleines", "Elles ne fonctionnent pas toujours"],
+    "answer": 0
+  }
+]

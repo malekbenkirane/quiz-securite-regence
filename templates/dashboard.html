@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regence</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .admin-dashboard {
+            margin: 0 auto;
+            padding: 20px;
+            max-width: 1200px;
+        }
+
+        header h1 {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .stat-box {
+            background-color: #1e1e2f;
+            border-radius: 20px;
+            padding: 30px;
+            width: 45%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .data-table {
+            margin-top: 40px;
+        }
+
+        .data-table h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #2d2d3a;
+            border-radius: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #444;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #1e1e2f;
+        }
+
+        td {
+            background-color: #2d2d3a;
+        }
+
+        td:nth-child(even) {
+            background-color: #3c3c4d;
+        }
+
+        td:hover {
+            background-color: #555;
+        }
+
+        .scrollable-table {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .fixed-buttons {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1e1e2f;
+            padding: 10px 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .dashboard-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .dashboard-button:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-dashboard">
+        <header>
+            <h1>Rapport test de sécurité informatique Régence</h1>
+        </header>
+
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3>Taux de Réussite</h3>
+                <canvas id="success-rate-chart"></canvas>
+            </div>
+            <div class="stat-box">
+                <h3>Statistiques des Scores</h3>
+                <canvas id="score-distribution-chart"></canvas>
+            </div>
+        </div>
+
+        <div class="data-table">
+            <h3>Résultats des Utilisateurs</h3>
+            <div class="scrollable-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Email</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for result in results %}
+                            <tr>
+                                <td>{{ result.user_email }}</td>
+                                <td>{{ result.score }}</td>
+                                <td>{{ result.date_taken }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ BOUTONS FIXES EN BAS -->
+    <div class="fixed-buttons">
+        <form method="POST" action="/reset-stats">
+            <button type="submit" class="dashboard-button">Réinitialiser les Statistiques</button>
+        </form>
+        <form method="GET" action="/download-report">
+            <button type="submit" class="dashboard-button">Télécharger le Rapport PDF</button>
+        </form>
+    </div>
+
+    <script>
+        const successRateData = {
+            labels: ['Réussi', 'Échoué'],
+            datasets: [{
+                data: [{{ successful_count }}, {{ failed_count }}],
+                backgroundColor: ['#4CAF50', '#FF5733'],
+                hoverBackgroundColor: ['#45a049', '#e04e32'],
+            }]
+        };
+
+        const scoreDistributionData = {
+            labels: ['0-3', '4-6', '7-8', '9-10'],
+            datasets: [{
+                data: [{{ low_scores }}, {{ mid_scores }}, {{ high_scores }}, {{ perfect_scores }}],
+                backgroundColor: ['#FF6384', '#FFCE56', '#36A2EB', '#4CAF50'],
+                hoverBackgroundColor: ['#FF4364', '#FFB400', '#1E88E5', '#388E3C'],
+            }]
+        };
+
+        const successRateCtx = document.getElementById('success-rate-chart').getContext('2d');
+        const scoreDistributionCtx = document.getElementById('score-distribution-chart').getContext('2d');
+
+        new Chart(successRateCtx, {
+            type: 'pie',
+            data: successRateData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+            },
+        });
+
+        new Chart(scoreDistributionCtx, {
+            type: 'bar',
+            data: scoreDistributionData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+</html>

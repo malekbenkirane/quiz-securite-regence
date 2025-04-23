@@ -1,0 +1,473 @@
+.logo-img {
+    max-width: 500px; /* Ajustez la largeur selon votre besoin */
+    height: auto; /* Garder les proportions de l'image */
+    display: block;
+    margin: 0 auto; /* Centrer l'image */
+}
+}
+/* --------------------------- GLOBAL STYLES --------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* --------------------------- BUTTON STYLE --------------------------- */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4; /* Couleur bleue moderne */
+    color: white;
+    border: none;
+    border-radius: 8px; /* Coins arrondis */
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animation fluide */
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3); /* Ombre douce */
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Effet de survol */
+.submit-btn:hover {
+    background-color: #0097a7; /* Couleur plus sombre au survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+/* Effet au clic */
+.submit-btn:active {
+    transform: scale(1); /* Normalise l'effet au clic */
+    box-shadow: 0 2px 5px rgba(0, 188, 212, 0.5); /* Ombre plus marquée */
+}
+
+/* Animation au focus */
+.submit-btn:focus {
+    outline: none;
+    border: 2px solid #00bcd4; /* Bordure bleue au focus */
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.7); /* Ombre au focus */
+}
+.fixed-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #1e1e2f;
+    padding: 10px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.dashboard-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dashboard-button:hover {
+    background-color: #45a049;
+}
+
+/* --------------------------- FORM AND QUESTION STYLES --------------------------- */
+.quiz-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.question-card {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.question-card h1 {
+    color: #00bcd4;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.question-card p {
+    color: #ecf0f1;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.logo-img {
+    max-width: 500px; /* Ajustez la largeur selon votre besoin */
+    height: auto; /* Garder les proportions de l'image */
+    display: block;
+    margin: 0 auto; /* Centrer l'image */
+}
+/* Style des choix de réponses */
+.choice {
+    margin: 10px 0;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.choice input {
+    margin-right: 10px;
+}
+/* --------------------------- BODY STYLE --------------------------- */
+body {
+    background: linear-gradient(135deg, #6a82fb, #fc5c7d); /* Dégradé moderne avec des couleurs vives */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 20px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+}
+/* --------------------------- HEADER --------------------------- */
+header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+header .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+/* --------------------------- RESULT BOX --------------------------- */
+.result-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond légèrement transparent */
+    padding: 50px 60px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Ombre douce */
+    backdrop-filter: blur(8px); /* Effet de flou pour le fond */
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-out; /* Animation d'apparition */
+}
+
+/* Titre des résultats */
+.result-box h2 {
+    font-size: 2.8rem;
+    color: #00bcd4;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+/* --------------------------- ADMIN DASHBOARD --------------------------- */
+.admin-dashboard {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #1c2833;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 50px; /* Augmenter l'espace sous le titre */
+    padding: 20px 0; /* Ajouter un peu de padding autour du titre */
+    background-color: #1e1e2f; /* Ajouter une couleur de fond pour bien isoler */
+    border-radius: 10px; /* Ajouter des bords arrondis pour un effet moderne */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajouter un ombrage pour un effet de profondeur */
+}
+
+/* --------------------------- STATS CONTAINER --------------------------- */
+.stats-container {
+    margin-top: 80px; /* Augmente l'espace entre le titre et les statistiques */
+}
+
+.stat-box {
+    margin-top: 30px;
+    width: 45%;
+    height: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centre horizontalement */
+    justify-content: center; /* centre verticalement */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+canvas {
+    width: 100% !important;
+    max-width: 200px;
+    height: auto !important;
+}
+
+
+h3 {
+    font-size: 18px; /* Réduit la taille du titre des boîtes */
+}
+
+@media screen and (max-width: 768px) {
+    .stat-box {
+        width: 100%; /* Pleine largeur sur petits écrans pour s'adapter à la taille de l'écran */
+        height: 200px; /* Ajuste la hauteur sur les petits écrans */
+    }
+
+    canvas {
+        height: 150px; /* Réduit la taille des graphiques sur les petits écrans */
+    }
+}
+
+
+
+.stat-box h3 {
+    font-size: 1.6rem;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.dashboard-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    margin: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dashboard-button:hover {
+    background-color: #388e3c;
+}
+/* --------------------------- DATA TABLE --------------------------- */
+.data-table {
+    background-color: #2f3c4c;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.data-table h3 {
+    font-size: 1.8rem;
+    color: #ff9800;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #555;
+}
+
+th {
+    background-color: #34495e;
+}
+
+tr:hover {
+    background-color: #1c2833;
+    transition: all 0.3s ease;
+}
+/* --------------------------- MESSAGES DE FÉLICITATIONS ET D'ENCOURAGEMENT --------------------------- */
+.congratulations {
+    font-size: 1.5rem;
+    color: #4CAF50; /* Vert de réussite */
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.encouragement {
+    font-size: 1.5rem;
+    color: #FFA500; /* Orange pour encourager sans être trop sévère */
+    margin-top: 20px;
+    font-weight: bold;
+}
+/* --------------------------- MEDIA QUERIES --------------------------- */
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stat-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+/* Affichage du score */
+.score {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.score span {
+    font-weight: bold;
+    color: #00bcd4;
+}
+
+/* Bouton retour */
+.btn {
+    background-color: #00bcd4;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
+}
+
+.btn:hover {
+    background-color: #0097a7;
+    transform: scale(1.1); /* Légère animation de zoom */
+}
+
+.btn:active {
+    transform: scale(1);
+}
+/* --------------------------- MAIN CONTAINER --------------------------- */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.login-container {
+    background-color: rgba(0, 0, 0, 0.7); /* Fond légèrement transparent */
+    padding: 40px 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Ombre plus douce et plus large */
+    backdrop-filter: blur(8px); /* Effet de flou pour le fond */
+    transition: all 0.3s ease-in-out;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.login-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #00bcd4; /* Couleur bleue moderne */
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Label style */
+.login-container label {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    display: inline-block;
+    transition: color 0.2s ease;
+}
+
+/* Input field styles */
+.login-container input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 25px;
+    background-color: #444;
+    border: 1px solid #555;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container input:focus {
+    outline: none;
+    border-color: #00bcd4;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.5);
+}
+
+/* Submit button styles */
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login-container button:hover {
+    background-color: #0097a7;
+    transform: scale(1.05);
+}
+
+.login-container button:active {
+    transform: scale(1);
+}
+
+/* --------------------------- FOOTER --------------------------- */
+footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+/* --------------------------- ANIMATIONS --------------------------- */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hover effect for labels and inputs */
+.login-container label:hover,
+.login-container input:focus {
+    color: #00bcd4;
+}

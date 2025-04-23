@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion Admin</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Connexion Administrateur</h2>
+        <form method="post" action="/login_admin">
+            <input type="text" name="username" placeholder="Identifiant" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit">Connexion</button>
+        </form>
+    </div>
+</body>
+</html>
